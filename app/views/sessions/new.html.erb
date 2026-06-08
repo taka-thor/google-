@@ -1,0 +1,10 @@
+<% content_for :title, "ログイン" %>
+
+<h1>ログイン</h1>
+
+<% if current_user %>
+  <p>こんにちは、<%= current_user.name %> さん</p>
+  <%= button_to "ログアウト", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Googleでログイン", google_auth_path %>
+<% end %>
